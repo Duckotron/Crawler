@@ -1,0 +1,28 @@
+node_modules/
+dist/
+release/
+*.part
+.DS_Store
+*.log
+*.db
+.env
+.env.local
+*.swp
+*.swo
+
+# Electron
+out/
+.electron/
+
+# Vite
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# Extension dist
+extension/dist/
+
+# Desktop dist
+desktop-app/dist/
+desktop-app/release/

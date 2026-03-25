@@ -1,0 +1,21 @@
+{
+  "name": "universal-web-scraper",
+  "version": "1.0.0",
+  "description": "Universal Web Scraper — Browser Extension + Desktop Companion App",
+  "private": true,
+  "workspaces": [
+    "extension",
+    "desktop-app"
+  ],
+  "scripts": {
+    "dev:extension": "npm run dev --workspace=extension",
+    "dev:desktop": "npm run dev --workspace=desktop-app",
+    "build:extension": "npm run build --workspace=extension",
+    "build:desktop": "npm run build --workspace=desktop-app",
+    "build": "npm run build:extension && npm run build:desktop",
+    "install:all": "npm install --workspace=extension && npm install --workspace=desktop-app"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

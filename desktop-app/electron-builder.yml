@@ -1,0 +1,57 @@
+appId: com.universalscraper.app
+productName: Universal Web Scraper
+copyright: Copyright © 2025
+
+directories:
+  output: release
+  buildResources: resources
+
+files:
+  - dist/**/*
+  - resources/**/*
+  - node_modules/**/*
+
+extraResources:
+  - from: resources/ffmpeg
+    to: ffmpeg
+    filter:
+      - "**/*"
+
+win:
+  target:
+    - target: nsis
+      arch: [x64, arm64]
+  icon: resources/icon.ico
+  artifactName: UniversalWebScraper-${version}-win-${arch}.${ext}
+
+mac:
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  icon: resources/icon.icns
+  artifactName: UniversalWebScraper-${version}-mac-${arch}.${ext}
+  category: public.app-category.utilities
+  entitlementsInherit: resources/entitlements.mac.plist
+
+linux:
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+  icon: resources/icons
+  category: Network;FileTransfer
+  artifactName: UniversalWebScraper-${version}-linux-${arch}.${ext}
+  desktop:
+    Name: Universal Web Scraper
+    Comment: Universal website scraper and media downloader
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+
+publish:
+  - provider: github
+    owner: universalscraper
+    repo: desktop-app
