@@ -1,0 +1,9 @@
+{
+  "name": "com.universalscraper.host",
+  "description": "Universal Web Scraper Native Messaging Host",
+  "path": "/path/to/universal-web-scraper-desktop",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://YOUR_EXTENSION_ID_HERE/"
+  ]
+}
